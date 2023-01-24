@@ -14,6 +14,8 @@
         <input type="text" name="address" id="address" value="{{$students->address}}" class="form-control"></br>
         <label>Mobile</label></br>
         <input type="text" name="mobile" id="mobile" value="{{$students->mobile}}" class="form-control"></br>
+        <label>Email</label></br>
+        <input type="email" name="email" id="email" value="{{$students->email}}" class="form-control"></br>
         <input type="submit" value="Update" class="btn btn-success"></br>
     </form>
   
