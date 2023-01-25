@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,7 +15,9 @@ use App\Http\Controllers\StudentController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('contact_form');
 });
+
+Route::post('/send', [MailController::class,"sendContactMail"])->name('send.contact_mail');
 Route::resource('/students', StudentController::class);
 Route::resource('/phones', UserController::class);
