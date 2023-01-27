@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\SendEmailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,9 +16,9 @@ use App\Http\Controllers\StudentController;
 */
 
 Route::get('/', function () {
-    return view('contact_form');
+    return view('welcome');
 });
 
-Route::post('/send', [MailController::class,"sendContactMail"])->name('send.contact_mail');
 Route::resource('/students', StudentController::class);
-Route::resource('/phones', UserController::class);
+Route::get('/sendemail', [SendEmailController::class, 'index']);
+Route::post('/sendemail/send', [SendEmailController::class, 'send']);

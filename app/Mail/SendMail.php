@@ -3,23 +3,22 @@
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Contracts\Queue\ShouldQueue;
 
-class ContactFormMail extends Mailable
+class SendMail extends Mailable
 {
     use Queueable, SerializesModels;
-
+    public $data;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public $contact_data;
-    public function __construct($contact_data)
+    public function __construct($data)
     {
-        $this->contact_data = $contact_data;
+        $this->data = $data;
     }
 
     /**
@@ -29,6 +28,8 @@ class ContactFormMail extends Mailable
      */
     public function build()
     {
-        return $this->subject('Contact Form Mail')->view('emails.contact_mail');
+        return $this->from('testrajinthan@gmail.com')->subject('Task_02 - Mail From Laravel')->view('dynamic_email_template')->with('data', $this->data);
     }
 }
+
+?>
