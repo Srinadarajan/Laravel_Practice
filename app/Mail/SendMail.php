@@ -28,7 +28,7 @@ class SendMail extends Mailable implements ShouldQueue
      */
     public function build()
     {
-        return $this->from('testrajinthan@gmail.com')->subject('Task_02 - Mail From Laravel')->view('dynamic_email_template')->with('data', $this->data);
+        return $this->from('sritest100@gmail.com')->subject('Task_02 - Mail From Laravel')->view('dynamic_email_template')->with('data', $this->data);
     }
 }
 
