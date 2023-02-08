@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\StudentController;
+use App\Http\Controllers\ParentsController;
 use App\Http\Controllers\SendEmailController;
 
 /*
@@ -19,6 +19,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('/students', StudentController::class);
+Route::resource('/parents', ParentsController::class);
 Route::get('/sendemail', [SendEmailController::class, 'index']);
 Route::post('/sendemail/send', [SendEmailController::class, 'send']);
